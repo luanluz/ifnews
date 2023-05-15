@@ -1,0 +1,30 @@
+// Espaçamento
+.section-spacing {
+  padding: $section-spacing;
+}
+
+.section-spacing-x {
+  padding-left: $section-spacing;
+  padding-right: $section-spacing;
+}
+
+.section-spacing-y {
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
+}
+
+.section-contents-spacing-t {
+  margin-top: $section-contents-spacing;
+}
+
+.section-contents-spacing-b {
+  margin-bottom: $section-contents-spacing;
+}
+
+@each $sufix-direction, $direction in $spacing-directions {
+  @each $sufix-space, $space in $spacers {
+    .#{$sufix-direction}-#{$sufix-space} {
+      #{$direction}: $space !important;
+    }
+  }
+}

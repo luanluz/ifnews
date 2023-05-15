@@ -1,0 +1,78 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// Fonts
+$main-font-family: 'Roboto';
+$secondary-font-family: 'Roboto';
+
+$font-size-root:              null;
+$font-size-base:              1rem;
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+
+$text-transform: lowercase, uppercase, capitalize;
+
+$text-weight: (
+  'bold': $font-weight-bold,
+  'bolder': $font-weight-bolder,
+  'normal': $font-weight-normal,
+  'light': $font-weight-light,
+  'lighter': $font-weight-lighter
+);
+
+// Título
+$title-font-family: $main-font-family;
+$title-font-line-heigth: 3.25rem;
+$title-font-weight: 800;
+$title-margin-bottom: 0.625rem;
+
+// Subtítulo
+$subtitle-font-family: $secondary-font-family;
+$subtitle-font-line-heigth: 2rem;
+$subtitle-font-weight: 400;
+$subtitle-margin-bottom: 0.625rem;
+
+// Card
+$card-font-size: $h5-font-size;
+$card-font-line-height: 1.75rem;
+
+// Parágrafo
+$paragraph-font-family: $secondary-font-family;
+$paragraph-font-size: $font-size-base * 1.125;
+$paragraph-font-line-heigth: 1.75rem;
+$paragraph-font-weight: normal;
+$paragraph-margin-bottom: 1.5rem;
+
+// Botões
+$buttons-font-family: $main-font-family;
+$buttons-font-align: center;
+$buttons-font-weight: 600;
+$buttons-text-transform: inherit;

@@ -1,0 +1,18 @@
+// Cor de fundo
+@each $sufix, $color in $theme-colors {
+  .bg-#{$sufix} {
+    background-color: $color;
+  }
+}
+
+@each $sufix, $color in $colors {
+  .bg-#{$sufix} {
+    background-color: $color;
+  }
+}
+
+@each $sufix, $color in $grays {
+  .bg-#{$sufix} {
+    background-color: $color;
+  }
+}

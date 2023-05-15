@@ -1,0 +1,18 @@
+// Color
+@each $sufix, $color in $theme-colors {
+  .text-#{$sufix} {
+    color: $color;
+  }
+}
+
+@each $sufix, $color in $colors {
+  .text-#{$sufix} {
+    color: $color;
+  }
+}
+
+@each $sufix, $color in $grays {
+  .text-#{$sufix} {
+    color: $color;
+  }
+}

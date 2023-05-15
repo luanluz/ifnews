@@ -1,0 +1,6 @@
+// Border radius
+@each $class, $radius in $borders-radius {
+  .#{$class} {
+    border-radius: $radius;
+  }
+}

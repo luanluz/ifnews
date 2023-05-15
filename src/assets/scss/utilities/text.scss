@@ -1,0 +1,72 @@
+// Título
+.section-title {
+  font-family: $title-font-family, sans-serif;
+  font-size: $font-size-base;
+  font-weight: $title-font-weight;
+  line-height: $title-font-line-heigth;
+  margin-bottom: $title-margin-bottom;
+}
+
+// Subtítulo
+.section-subtitle {
+  font-family: $subtitle-font-family, sans-serif;
+  font-size: $font-size-base;
+  font-weight: $subtitle-font-weight;
+  line-height: $subtitle-font-line-heigth;
+  margin-bottom: $subtitle-margin-bottom;
+}
+
+// Parágrafo
+.paragraph {
+  font-family: $paragraph-font-family, sans-serif;
+  font-size: $paragraph-font-size;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-font-line-heigth;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+// Texto
+@each $sufix, $font-size in $font-sizes {
+  .fs-#{$sufix} {
+    font-size: $font-size;
+  }
+}
+
+@each $sufix, $weight in $text-weight {
+  .fw-#{$sufix} {
+    font-weight: $weight;
+  }
+}
+
+@each $position in $align-positions-vertical {
+  .text-#{$position} {
+    text-align: $position;
+  }
+}
+
+@each $transform in $text-transform {
+  .text-#{$transform} {
+    text-transform: $transform;
+  }
+}
+
+.text-break {
+  word-wrap: break-word!important;
+  word-break: break-word!important;
+}
+
+.text-decoration-none {
+  text-decoration: none!important;
+}
+
+.text-decoration-underline {
+  text-decoration: underline!important;
+}
+
+.text-wrap {
+  white-space: normal!important;
+}
+
+.text-nowrap {
+  white-space: nowrap!important;
+}

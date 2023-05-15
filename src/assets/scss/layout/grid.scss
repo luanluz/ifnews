@@ -1,0 +1,43 @@
+@use "sass:math";
+
+// Sistema de grid
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+
+  @each $position in $align-positions-vertical {
+    &.row-#{$position} {
+      justify-content: $position;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &.horizontal-scroll {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  }
+}
+
+[class*="col-"] {
+  display: block;
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  min-height: 1px;
+}
+
+@each $prefix, $pixels in $grid-system-breakpoints {
+  $width: if($pixels != 1px, max-width, min-width);
+
+  @media screen and ($width: #{$pixels}) {
+    @for $column from 1 through $grid-system-total-columns {
+      .col-#{$prefix}-#{$column} {
+        display: block;
+        flex: 0 0 #{math.div(100%, $grid-system-total-columns) * $column};
+        max-width: #{math.div(100%, $grid-system-total-columns) * $column};
+      }
+    }
+  }
+}

@@ -1,23 +1,53 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import NewsView from '@/views/NewsView.vue'
+import NoticesView from '@/views/NoticesView.vue'
+import ClosedNoticesView from '@/views/ClosedNoticesView.vue'
+import SystemsView from '@/views/SystemsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'News',
+      component: NewsView,
+      meta: {
+        title: 'Notícias'
+      }
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: '/editais-em-aberto',
+      name: 'Notices',
+      component: NoticesView,
+      meta: {
+        title: 'Editais em Aberto'
+      }
+    },
+    {
+      path: '/editais-fechados',
+      name: 'Closed Notices',
+      component: ClosedNoticesView,
+      meta: {
+        title: 'Editais Fechados'
+      }
+    },
+    {
+      path: '/sistemas',
+      name: 'Systems',
+      component: SystemsView,
+      meta: {
+        title: 'Sistemas dos Campus'
+      }
     }
   ]
+})
+
+// Define o título padrão da aplicação
+const DEFAULT_TITLE = 'IFNews'
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title} - ${DEFAULT_TITLE}` || DEFAULT_TITLE
+  next()
 })
 
 export default router

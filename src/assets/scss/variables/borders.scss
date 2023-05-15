@@ -1,0 +1,11 @@
+$border-radius:               .5rem;
+$border-radius-sm:            .25rem;
+$border-radius-lg:            .75rem;
+$border-radius-pill:          50rem;
+
+$borders-radius: (
+  'border-radius': $border-radius,
+  'border-radius-sm': $border-radius-sm,
+  'border-radius-lg': $border-radius-lg,
+  'border-radius-pill': $border-radius-pill,
+);
