@@ -1,0 +1,6 @@
+// Sombras
+@each $class, $value in $shadows {
+  .#{$class} {
+    font-size: $value;
+  }
+}

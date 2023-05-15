@@ -1,0 +1,22 @@
+// Breakpoints
+$breakpoint-xl: 1px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+// Container
+$container-breakpoints: (
+  576px: 540px,
+  768px: 720px,
+  992px: 960px,
+  1280px: 1200px
+);
+
+// Sistema de grid
+$grid-system-total-columns: 12;
+$grid-system-breakpoints: (
+  xl: $breakpoint-xl,
+  lg: $breakpoint-lg,
+  md: $breakpoint-md,
+  sm: $breakpoint-sm
+);

@@ -1,0 +1,25 @@
+// Espaçamento
+
+$section-spacing: 1.375rem;
+$section-contents-spacing: 0.625rem;
+$button-padding: 1rem 2.5rem;
+$padding-default-xy: 0.5rem 1rem;
+$padding-default: 1rem;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3
+);
+
+$spacing-directions: (
+  'm': margin,
+  'mt': margin-top,
+  'mb': margin-bottom,
+  'ml': margin-left,
+  'mr': margin-right
+);
