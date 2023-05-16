@@ -1,9 +1,10 @@
 <script setup lang="ts">
 
+import BaseView from "@/views/BaseView.vue";
 </script>
 
 <template>
-  <h1>Notícias</h1>
+  <BaseView />
 </template>
 
 <style scoped lang="scss">

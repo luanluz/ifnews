@@ -1,6 +1,6 @@
 export interface Content {
     title: string
-    description: string
+    description?: string
     link: string
-    pubDate: string
+    pubDate?: string
 }
