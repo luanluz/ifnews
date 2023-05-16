@@ -17,7 +17,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: $padding-default-xy;
-  border-bottom: 1px solid $outer-space;
+  border-bottom: 1px solid $gray-400;
   background: $white;
   width: 100%;
 

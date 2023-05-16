@@ -4,7 +4,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -1rem;
+  margin: 0 -0.5rem;
 
   @each $position in $align-positions-vertical {
     &.row-#{$position} {
@@ -23,7 +23,7 @@
 [class*="col-"] {
   display: block;
   position: relative;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   min-height: 1px;
 }

@@ -25,8 +25,9 @@ import { RouterLink } from 'vue-router'
 .navigation-bar {
   position: fixed;
   bottom: 0;
-  padding: $padding-default-xy;
-  border-top: 1px solid $outer-space;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid $gray-400;
   background-color: $white;
   width: 100%;
 
@@ -34,8 +35,6 @@ import { RouterLink } from 'vue-router'
     display: flex;
     justify-content: space-between;
     overflow: visible;
-    padding-left: 0;
-    padding-right: 0;
 
     a {
       position: relative;
