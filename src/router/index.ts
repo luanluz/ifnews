@@ -3,6 +3,7 @@ import NewsView from '@/views/NewsView.vue'
 import NoticesView from '@/views/NoticesView.vue'
 import ClosedNoticesView from '@/views/ClosedNoticesView.vue'
 import SystemsView from '@/views/SystemsView.vue'
+import BaseView from '@/views/BaseView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'News',
-      component: NewsView,
+      component: BaseView,
       meta: {
         title: 'Notícias'
       }

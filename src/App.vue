@@ -15,5 +15,7 @@ import NavigationBar from "@/components/NavigationBar.vue";
 </template>
 
 <style scoped lang="scss">
-
+main {
+  padding-bottom: 5.625rem;
+}
 </style>
