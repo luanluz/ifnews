@@ -9,15 +9,26 @@ import LoadingComponent from "@/components/Loading.vue";
 
 export default defineComponent({
     name: 'BaseView',
+    props: {
+        title: {
+            type: String,
+            default: 'Últimas Notícias'
+        },
+        resource: {
+            type: String,
+            default: 'noticias/ultimas-noticias'
+        },
+    },
     components: {LoadingComponent, CardComponent, ButtonComponent, InputComponent},
-    setup() {
+    setup(props) {
         const BASE_URL = 'https://api.rss2json.com/v1/api.json?rss_url=http://www.ifto.edu.br/'
         const contents = ref<Content[]>([])
         const searchQuery = ref('')
         const sortBy = ref<boolean>(false)
         const loading = ref<boolean>(true)
+        const resource = ref(props.resource)
 
-        axios.get(`${BASE_URL}palmas/noticias/ultimas-noticias/RSS`)
+        axios.get(`${BASE_URL}palmas/${resource.value}/RSS`)
             .then((response) => {
                 contents.value = response.data.items
             })
@@ -29,10 +40,12 @@ export default defineComponent({
 
             return (query ? contents.value.filter((content) => content.title.toLowerCase().includes(query)) : contents.value)
                 .sort((a, b) => {
-                    if (sortBy.value)
-                        return new Date(a.pubDate).getTime() - new Date(b.pubDate).getTime()
+                    if (a?.pubDate && b?.pubDate) {
+                        if (sortBy.value)
+                            return new Date(a.pubDate).getTime() - new Date(b.pubDate).getTime()
 
-                    return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+                        return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+                    }
                 })
         })
 
@@ -46,7 +59,7 @@ export default defineComponent({
             filteredContents,
             sortByAsc,
             sortBy,
-            loading
+            loading,
         }
     },
 })
@@ -71,6 +84,12 @@ export default defineComponent({
             </div>
         </div>
 
+        <div class="section-spacing-b">
+            <h2 class="page-title">
+                {{ title }}
+            </h2>
+        </div>
+
         <LoadingComponent :is-loading="loading" />
 
         <div v-if="filteredContents.length">
@@ -80,5 +99,10 @@ export default defineComponent({
 </template>
 
 <style scoped lang="scss">
-
+.page-title {
+    font-weight: 700;
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+    color: $dark-green;
+}
 </style>

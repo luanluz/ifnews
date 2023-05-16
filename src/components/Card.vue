@@ -24,7 +24,7 @@ export default defineComponent({
           <h3 class="title">{{ content.title }}</h3>
           <p class="description">{{ content.description }}</p>
       </div>
-      <div class="footer">
+      <div v-if="content?.pubDate" class="footer">
           <span class="time-ago">
               <i class="bi-clock"></i>
               {{ timeAgoService(content.pubDate) }}
