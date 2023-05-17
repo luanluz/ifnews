@@ -1,7 +1,7 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue'
 import CardComponent from '@/components/Card.vue'
-import {Content} from "@/types/interfaces/icontent";
+import type {Content} from '@/types/interfaces/icontent'
 
 export default defineComponent({
     components: {CardComponent},
